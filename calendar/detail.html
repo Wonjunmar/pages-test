@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스터디 상세</title>
+<style>
+body{font-family:-apple-system,"Apple SD Gothic Neo",sans-serif;max-width:560px;margin:40px auto;padding:0 16px;color:#222}
+h1{font-size:22px}
+.nav{font-size:14px}
+.nav a{color:#0969da;text-decoration:none;margin-right:12px}
+.box{padding:16px;border-radius:10px;background:#f4f4f4;line-height:1.7}
+</style>
+</head>
+<body>
+<p class="nav"><a href="./">← 캘린더</a><a href="../">목차</a></p>
+<h1 id="title">상세</h1>
+<div class="box" id="box"></div>
+<script>
+var day=new URLSearchParams(location.search).get('day')||'1';
+document.getElementById('title').textContent='2027년 1월 '+day+'일';
+var plans={'4':'국어 비문학 3지문 · 수학 미적분 20문항','11':'영어 듣기 모의고사 1회','18':'주간 오답 정리','25':'월간 모의고사 리뷰'};
+document.getElementById('box').textContent=plans[day]||'등록된 플랜이 없습니다.';
+</script>
+</body>
+</html>
