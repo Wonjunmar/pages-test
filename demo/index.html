@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pages 배포 테스트</title>
+<style>
+body{font-family:-apple-system,"Apple SD Gothic Neo",sans-serif;max-width:480px;margin:40px auto;padding:0 16px;color:#222}
+h1{font-size:22px}
+.tabs{display:flex;gap:8px;margin:16px 0}
+.tabs button{flex:1;padding:10px;border:1px solid #ccc;border-radius:8px;background:#fff;cursor:pointer}
+.tabs button.on{background:#222;color:#fff;border-color:#222}
+.panel{padding:16px;border-radius:8px;background:#f4f4f4}
+small{color:#888}
+</style>
+</head>
+<body>
+<h1>GitHub Pages 배포 테스트</h1>
+<p>main 브랜치에 push하면 별도 CI/CD 설정 없이 이 페이지가 갱신됩니다.</p>
+<div class="tabs">
+<button class="on" data-t="1">1월</button>
+<button data-t="2">2월</button>
+<button data-t="3">3월</button>
+</div>
+<div class="panel" id="panel">1월 스터디 플랜 예시</div>
+<p><small>v1 · 테스트용 더미 페이지</small></p>
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){
+b.addEventListener('click',function(){
+document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});
+b.classList.add('on');
+document.getElementById('panel').textContent=b.dataset.t+'월 스터디 플랜 예시';
+});
+});
+</script>
+</body>
+</html>
